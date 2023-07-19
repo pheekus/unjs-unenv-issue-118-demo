@@ -1,0 +1,30 @@
+diff --git a/node_modules/unenv/.DS_Store b/node_modules/unenv/.DS_Store
+new file mode 100644
+index 0000000..cf789b2
+Binary files /dev/null and b/node_modules/unenv/.DS_Store differ
+diff --git a/node_modules/unenv/runtime/node/http/_response.cjs b/node_modules/unenv/runtime/node/http/_response.cjs
+index 87e3291..f0aa79e 100644
+--- a/node_modules/unenv/runtime/node/http/_response.cjs
++++ b/node_modules/unenv/runtime/node/http/_response.cjs
+@@ -66,7 +66,7 @@ class ServerResponse extends _writable.Writable {
+     return this;
+   }
+   setHeader(name, value) {
+-    this._headers[name.toLowerCase()] = value + "";
++    this._headers[name.toLowerCase()] = value;
+     return this;
+   }
+   getHeader(name) {
+diff --git a/node_modules/unenv/runtime/node/http/_response.mjs b/node_modules/unenv/runtime/node/http/_response.mjs
+index d5224a1..c8ff951 100644
+--- a/node_modules/unenv/runtime/node/http/_response.mjs
++++ b/node_modules/unenv/runtime/node/http/_response.mjs
+@@ -67,7 +67,7 @@ export class ServerResponse extends Writable {
+     return this;
+   }
+   setHeader(name, value) {
+-    this._headers[name.toLowerCase()] = value + "";
++    this._headers[name.toLowerCase()] = value;
+     return this;
+   }
+   getHeader(name) {

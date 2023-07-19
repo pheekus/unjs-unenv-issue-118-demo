@@ -25,3 +25,7 @@ ctx.response.get(...).forEach is not a function
 Here `ctx` is a Koa context, `ctx.response` is a Koa response. Its `get()` method calls `getHeader()` on a `ServerResponse` instance internally. That instance happens to come from `unjs/unenv` when a Nuxt 3 project is built with the `aws-lambda` preset.
 
 Unlike the real `http.ServerResponse` from Node, unenv's `ServerResponse` converts all header values to `string`. That causes issues for `oidc-provider` because it expects to `.get()` an array after `.set()`-ing one. This particular example is erroring around reading/writing multi-value `set-cookie` header which is a pretty common scenario.
+
+## Quick fix that worked for me
+
+Storing header values as-is (without converting them to `string`) solved this particular problem for me. I've included a patch that will allow you to test it out with this example: `npm run patch`. If you run that script and rebuild the project, it won't error anymore (expected result is a 303 redirect to the interaction view).

@@ -5,6 +5,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "test": "node test.mjs",
+    "patch": "patch-package",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
@@ -14,6 +15,7 @@
     "nuxt": "^3.6.3"
   },
   "dependencies": {
-    "oidc-provider": "^8.2.2"
+    "oidc-provider": "^8.2.2",
+    "patch-package": "^7.0.2"
   }
 }
