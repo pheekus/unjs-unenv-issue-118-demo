@@ -4,13 +4,16 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "test": "node test.mjs",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@types/node": "^18.16.19",
+    "@types/oidc-provider": "^8.2.0",
     "nuxt": "^3.6.3"
+  },
+  "dependencies": {
+    "oidc-provider": "^8.2.2"
   }
 }
